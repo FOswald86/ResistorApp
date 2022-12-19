@@ -1,0 +1,21 @@
+<resources>
+    <string name="parallel">Parallel</string>
+    <string name="add">add</string>
+    <string name="resistor">Resistor</string>
+    <string name="seriell">Seriell</string>
+    <string name="result">Result</string>
+    <string name="calc">Calc</string>
+    <string name="reset">Reset</string>
+    <string name="_123_45">123.45</string>
+    <string-array name="units">
+        <item>mega</item>
+        <item>kilo</item>
+        <item>ohm</item>
+        <item>mili</item>
+        <item>micro</item>
+        <item>nano</item>
+    </string-array>
+    <string name="app_name">ResistorCalculator</string>
+    <string name="u2126">Ω</string>
+    <string name="resistorcolorcode">resistorColorCode</string>
+</resources>

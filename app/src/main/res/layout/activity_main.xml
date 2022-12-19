@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/schaltkreisbackground"
+    tools:context=".MainActivity">
+    <!-- Comments -->
+    <TextView
+        android:id="@+id/txt_output"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_edges_shape"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_reset"
+        app:layout_constraintStart_toEndOf="@+id/lbl_result"
+        app:layout_constraintTop_toTopOf="@+id/lbl_result" />
+
+    <TextView
+        android:id="@+id/txt_resistors"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_edges_shape"
+        android:gravity="center"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lbl_r1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_input" />
+
+    <Button
+        android:id="@+id/btn_seriell"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:onClick="btn_serial"
+        android:text="@string/seriell"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/txt_resistors"
+        app:layout_constraintTop_toBottomOf="@+id/txt_resistors" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lbl_r1" />
+
+    <Button
+        android:id="@+id/btn_parallel"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:onClick="btn_parallel"
+        android:text="@string/parallel"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/txt_resistors"
+        app:layout_constraintTop_toTopOf="@+id/btn_seriell" />
+
+    <EditText
+        android:id="@+id/txt_input"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_textview"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/_123_45"
+        android:importantForAutofill="no"
+        android:inputType="number|numberDecimal"
+        android:maxLength="8"
+        android:textColor="@color/black"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintStart_toEndOf="@+id/lbl_r1"
+        app:layout_constraintTop_toTopOf="@+id/lbl_r1" />
+
+    <TextView
+        android:id="@+id/lbl_r1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edges_shape"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/resistor"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_result"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_edges_shape"
+        android:gravity="center"
+        android:text="@string/result"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/btn_seriell"
+        app:layout_constraintTop_toBottomOf="@+id/btn_seriell" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/reset"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/btn_parallel"
+        app:layout_constraintTop_toTopOf="@+id/lbl_result" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:contentDescription="@string/resistorcolorcode"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_seriell"
+        app:layout_constraintEnd_toStartOf="@+id/btn_parallel"
+        app:layout_constraintStart_toEndOf="@+id/btn_seriell"
+        app:layout_constraintTop_toTopOf="@+id/btn_seriell"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/resistor3" />
+
+    <TextView
+        android:id="@+id/txt_colorRing1"
+        android:layout_width="6dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/txt_colorRing2"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txt_colorRing4"
+        android:layout_width="6dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/txt_colorRing3"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txt_colorRing3"
+        android:layout_width="6dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="-3dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txt_colorRing2"
+        android:layout_width="6dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="411dp"
+        app:barrierDirection="left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="162dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="194dp"
+        android:layout_marginEnd="217dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
